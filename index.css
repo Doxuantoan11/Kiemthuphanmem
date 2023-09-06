@@ -1,0 +1,40 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+   }
+
+.pointer {
+    cursor: pointer;
+}
+.header {
+    margin-left: 32px;
+}
+
+.flexCss{
+    display: flex;
+
+}
+
+.flexCss label{
+    float: right;
+    width: 50px;
+
+}
+
+.flexCss input{
+    flex:1;
+
+}
+.header-hover:hover {
+    color: #508bfc;
+}
+.active {
+    color: rgb(209, 24, 40);
+}
+.kq,input[type=input] {
+    font-size: 16px;
+    color: rgb(108, 15, 230);
+    font-weight: bold;
+  }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="vh-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class=" header d-flex ">
+                    <div class="hoahong pointer header-hover active ">
+                        <p>Hoa hồng</p>
+                    </div>
+                    <div class="nextday ml-4 mr-4 pointer header-hover">
+                        <p>Next day</p>
+                    </div>
+                    <div class="tamgiac pointer header-hover">
+                        <p>Tam giác</p>
+                    </div>
+                </div>
+                <div class="card-body p-5 text-center hoahong-form">
+                  <h3 class="mb-5">Bài toán hoa hồng</h3>
+      
+                  <div class="form-group row">
+                    <label for="khoa" class=" ">Khoá</label>
+                    <div class="col-sm-8">
+                      <input type="input" class="form-control" id="khoa">
+                    </div>
+                  </div>
+      
+                  <div class="form-group row">
+                    <label for="bang" class=" col-form-label">Báng</label>
+                    <div class="col-sm-8">
+                      <input type="input" class="form-control" id="bang">
+                    </div>
+                  </div>
+                        
+                  <div class="form-group row">
+                    <label for="nong" class=" col-form-label">Nòng</label>
+                    <div class="col-sm-8">
+                      <input type="input" class="form-control" id="nong">
+                    </div>
+                  </div>
+
+                  <div class="form-group row hoahong-kq kq"> kết quả : </div>
+      
+                  <div class=" form-group row   d-flex flex-row justify-content-between">
+                    <button class="btn btn-primary btn-lg  btn_hoahong_tinh col-sm-4" type="button">Tính</button>
+                    <button class="btn btn-primary btn-lg  btn_hoahong_xoa col-sm-4" type="button">Xoá</button>
+                  </div>
+      
+                </div>
+
+                <div class="card-body p-5 text-center tamgiac-form d-none">
+                    <h3 class="mb-5">Bài toán tam giác</h3>
+        
+                    <div class="form-group row">
+                      <label for="a" class="col-form-label">Cạnh a</label>
+                      <div class="col-sm-8">
+                        <input type="input" class="form-control" id="a">
+                      </div>
+                    </div>
+        
+                    <div class="form-group row">
+                      <label for="b" class=" col-form-label">Cạnh b</label>
+                      <div class="col-sm-8">
+                        <input type="input" class="form-control" id="b">
+                      </div>
+                    </div>
+                          
+                    <div class="form-group row">
+                      <label for="c" class=" col-form-label">Cạnh c</label>
+                      <div class="col-sm-8">
+                        <input type="input" class="form-control" id="c">
+                      </div>
+                    </div>
+  
+                    <div class="form-group row tamgiac-kq kq">kết quả :</div>
+        
+                    <div class=" form-group row   d-flex flex-row justify-content-between">
+                      <button class="btn btn-primary btn-lg  btn_tamgiac_tinh col-sm-4" type="button">Kiểm tra</button>
+                      <button class="btn btn-primary btn-lg  btn_tamgiac_xoa col-sm-4" type="button">Xoá</button>
+                    </div>
+        
+                </div>
+                <div class="card-body p-5 text-center nextday-form d-none">
+                    <h3 class="mb-5">Bài toán next day</h3>
+        
+                    <div class="form-group row flexCss">
+                      <label for="ngay" class=" col-form-label">Ngày</label>
+                      <div class="col-sm-8">
+                        <input type="input" class="form-control" id="ngay">
+                      </div>
+                    </div>
+        
+                    <div class="form-group row flexCss">
+                      <label for="thang" class="col-form-label">Tháng</label>
+                      <div class="col-sm-8">
+                        <input type="input" class="form-control" id="thang">
+                      </div>
+                    </div>
+                          
+                    <div class="form-group row flexCss">
+                      <label for="nam" class=" col-form-label">Năm</label>
+                      <div class="col-sm-8">
+                        <input type="input" class="form-control" id="nam">
+                      </div>
+                    </div>
+  
+                    <div class="form-group row nextday-kq kq">kết quả :</div>
+        
+                    <div class=" form-group row   d-flex flex-row justify-content-between">
+                      <button class="btn btn-primary btn-lg  btn_nextday_tinh col-sm-4" type="button">Tính</button>
+                      <button class="btn btn-primary btn-lg  btn_nextday_xoa col-sm-4" type="button">Xoá</button>
+                    </div>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+<script src="index.js"></script>
+</html>
+
