@@ -219,7 +219,7 @@ function tinhtamgiac(){
             tamgiacOutput.textContent = `Tam giác cân`;
             
         }
-        else if(a*a +b*b =c*c) {
+        else if(a*a +b*b ==c*c) {
             tamgiacOutput.textContent = `Tam giác vuông`;
             
         }
