@@ -219,6 +219,10 @@ function tinhtamgiac(){
             tamgiacOutput.textContent = `Tam giác cân`;
             
         }
+        else if(a*a +b*b =c*c) {
+            tamgiacOutput.textContent = `Tam giác vuông`;
+            
+        }
         else   tamgiacOutput.textContent = `Tam giác thường`;
     }
     else tamgiacOutput.textContent = `Không phải tam giác`;
