@@ -4,7 +4,7 @@ const nextday = document.querySelector('.nextday');
 const tamgiac_form = document.querySelector('.tamgiac-form');
 const hoahong_form = document.querySelector('.hoahong-form');
 const nextday_form = document.querySelector('.nextday-form');
-
+var caseId =1;
 // form-hoahong
 const khoaInput = document.querySelector('#khoa');
 const bangInput = document.querySelector('#bang');
@@ -12,6 +12,7 @@ const nongInput = document.querySelector('#nong');
 const hoahongOutput = document.querySelector('.hoahong-kq');
 const tinhButton = document.querySelector('.btn_hoahong_tinh');
 const xoaButton = document.querySelector('.btn_hoahong_xoa');
+
 
 // nextday
 const ngayInput = document.querySelector('#ngay');
@@ -67,22 +68,39 @@ function Kiemtra(khoa, bang, nong) {
   }
   
   function TinhHoahong() {
-    const khoa = parseInt(khoaInput.value);
-    const bang = parseInt(bangInput.value);
-    const nong = parseInt(nongInput.value);
-  
+    
+    var khoa = parseInt(khoaInput.value);
+    var bang = parseInt(bangInput.value);
+    var nong = parseInt(nongInput.value);
+    var hoahong_table = document.querySelector('.hoahong-table').getElementsByTagName('tbody')[0];
+    var newRow = hoahong_table.insertRow();
+    var newCell0 = newRow.insertCell(0);
+    var newCell1 = newRow.insertCell(1);
+    var newCell2 = newRow.insertCell(2);
+    var newCell3 = newRow.insertCell(3);
+    var newCell4 = newRow.insertCell(4);
+    var newCell5= newRow.insertCell(5);
+    newCell0.appendChild(document.createTextNode(caseId));
+    caseId++;
+    newCell1.appendChild(document.createTextNode(khoa));
+    newCell2.appendChild(document.createTextNode(bang));
+    newCell3.appendChild(document.createTextNode(nong));
     if (Kiemtra(khoa, bang, nong)) {
       const soban = khoa * 45 + bang * 30 + nong * 25;
-  
+      newCell4.appendChild(document.createTextNode(soban));
       if (soban <= 1000) {
         hoahongOutput.textContent = `Số hoa hồng là: ${soban * 0.1}`;
+        newCell5.appendChild(document.createTextNode(soban * 0.1));
       } else if (soban > 1000 && soban <=1800) {
         hoahongOutput.textContent = `Số hoa hồng là: ${1000 * 0.1 + (soban - 1000) * 0.15}`;
+        newCell5.appendChild(document.createTextNode(1000 * 0.1 + (soban - 1000) * 0.15));
       } else {
         hoahongOutput.textContent = `Số hoa hồng là: ${1000 * 0.1 + 800 * 0.15 + (soban - 1800) * 0.2}`;
+        newCell5.appendChild(document.createTextNode(1000 * 0.1 + 800 * 0.15 + (soban - 1800) * 0.2));
       }
     } else {
       hoahongOutput.textContent = 'Lỗi dữ liệu';
+      newCell5.appendChild(document.createTextNode('Lỗi dữ liệu'));
     }
   }
   

@@ -38,3 +38,14 @@
     color: rgb(108, 15, 230);
     font-weight: bold;
   }
+
+  table,td, th {
+    border: 1px solid black;
+    border-color: rgb(8, 8, 8) !important;
+}
+table {
+    height: fit-content;
+    table-layout: fixed;
+  }
+
+  
