@@ -12,9 +12,9 @@
     <section class="vh-100" style="background-color: #508bfc;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
-            <h2 class="ml-5 ">Kết quả</h2>
+            <h2 class="mt-kq">Kết quả</h2>
             <div class="d-flex w-100 justify-content-between">
-              <div class="card shadow-2-strong w-45" style="border-radius: 1rem;">
+              <div class="card shadow-2-strong w-45 max-height" style="border-radius: 1rem;">
                 <div class=" header d-flex ">
                     <div class="hoahong pointer header-hover active ">
                         <p>Hoa hồng</p>
@@ -124,20 +124,48 @@
         
                 </div>
               </div>
-              <table class=" table  table-light w-50 ml-5 talbe-custome hoahong-table">
-                <thead>
-                  <tr class="bg-primary">
-                    <th >CaseID</th>
-                    <th >khoá</th>
-                    <th >Báng</th>
-                    <th >Nòng</th>
-                    <th >Số bán</th>
-                    <th>Output</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
+              <div class =" w-50 ml-5 " style="max-height: 500px; overflow-y: auto;">                
+                <table class=" table  table-light talbe-custome hoahong-table talbe-custome d-none  " >
+                  <thead >
+                    <tr class="bg-primary">
+                      <th >CaseID</th>
+                      <th >khoá</th>
+                      <th >Báng</th>
+                      <th >Nòng</th>
+                      <th >Số bán</th>
+                      <th>Output</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <table class=" table  table-light talbe-custome nextday-table  d-none " >
+                  <thead >
+                    <tr class="bg-primary">
+                      <th >CaseID</th>
+                      <th >Ngày</th>
+                      <th >Tháng</th>
+                      <th >Năm</th>
+                      <th>Output</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <table class=" table  table-light talbe-custome tamgiac-table   " >
+                  <thead >
+                    <tr class="bg-primary">
+                      <th >CaseID</th>
+                      <th >a</th>
+                      <th >b</th>
+                      <th >c</th>
+                      <th>Output</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

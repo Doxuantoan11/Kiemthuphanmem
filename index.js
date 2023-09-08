@@ -30,6 +30,10 @@ const tamgiacOutput = document.querySelector('.tamgiac-kq');
 const tamgiac_btn_tinh = document.querySelector('.btn_tamgiac_tinh');
 const tamgiac_btn_xoa = document.querySelector('.btn_tamgiac_xoa');
 
+// bảng
+const hoahong_table = document.querySelector('.hoahong-table');
+const nextday_table = document.querySelector('.nextday-table');
+const tamgiac_table = document.querySelector('.tamgiac-table');
 
 tamgiac.addEventListener('click', () => {
   tamgiac_form.classList.remove('d-none');
@@ -38,6 +42,10 @@ tamgiac.addEventListener('click', () => {
   nextday.classList.remove('active');
   hoahong_form.classList.add('d-none');
   nextday_form.classList.add('d-none');
+  // bảng
+  tamgiac_table.classList.remove('d-none');
+  hoahong_table.classList.add('d-none');
+  nextday_table.classList.add('d-none');
 });
 hoahong.addEventListener('click', () => {
     hoahong_form.classList.remove('d-none');
@@ -46,6 +54,10 @@ hoahong.addEventListener('click', () => {
     nextday.classList.remove('active');
     tamgiac_form.classList.add('d-none');
     nextday_form.classList.add('d-none');
+    // bảng
+    hoahong_table.classList.remove('d-none');
+    tamgiac_table.classList.add('d-none');
+    nextday_table.classList.add('d-none');
 });
 nextday.addEventListener('click', () => {
     nextday_form.classList.remove('d-none');
@@ -54,6 +66,10 @@ nextday.addEventListener('click', () => {
     nextday.classList.add('active');
     hoahong.classList.remove('active');
     tamgiac.classList.remove('active');
+    // bảng
+    nextday_table.classList.remove('d-none');
+    hoahong_table.classList.add('d-none');
+    tamgiac_table.classList.add('d-none');
 });
 
 
@@ -85,22 +101,33 @@ function Kiemtra(khoa, bang, nong) {
     newCell1.appendChild(document.createTextNode(khoa));
     newCell2.appendChild(document.createTextNode(bang));
     newCell3.appendChild(document.createTextNode(nong));
+
     if (Kiemtra(khoa, bang, nong)) {
       const soban = khoa * 45 + bang * 30 + nong * 25;
       newCell4.appendChild(document.createTextNode(soban));
       if (soban <= 1000) {
-        hoahongOutput.textContent = `Số hoa hồng là: ${soban * 0.1}`;
+        hoahongOutput.textContent = `Số tiền hoa hồng là: ${soban * 0.1}`;
         newCell5.appendChild(document.createTextNode(soban * 0.1));
       } else if (soban > 1000 && soban <=1800) {
-        hoahongOutput.textContent = `Số hoa hồng là: ${1000 * 0.1 + (soban - 1000) * 0.15}`;
+        hoahongOutput.textContent = `Số tiền hoa hồng là: ${1000 * 0.1 + (soban - 1000) * 0.15}`;
         newCell5.appendChild(document.createTextNode(1000 * 0.1 + (soban - 1000) * 0.15));
       } else {
-        hoahongOutput.textContent = `Số hoa hồng là: ${1000 * 0.1 + 800 * 0.15 + (soban - 1800) * 0.2}`;
+        hoahongOutput.textContent = `Số tiền hoa hồng là: ${1000 * 0.1 + 800 * 0.15 + (soban - 1800) * 0.2}`;
         newCell5.appendChild(document.createTextNode(1000 * 0.1 + 800 * 0.15 + (soban - 1800) * 0.2));
       }
     } else {
       hoahongOutput.textContent = 'Lỗi dữ liệu';
       newCell5.appendChild(document.createTextNode('Lỗi dữ liệu'));
+    }
+    var cells = [newCell1, newCell2, newCell3, newCell4, newCell5];
+
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].style.fontWeight = "bold";
+      if (i <= 2) {
+        cells[i].style.color = "#007bff";
+      } else {
+        cells[i].style.color = "#df1a1a";
+      }
     }
   }
   
@@ -199,12 +226,38 @@ function timNgayHomSau(ngay, thang, nam) {
     var ngay = parseInt(ngayInput.value);
     var thang = parseInt(thangInput.value);
     var nam = parseInt(namInput.value);
+
+    var nextday_table = document.querySelector('.nextday-table').getElementsByTagName('tbody')[0];
+    var newRow = nextday_table.insertRow();
+    var newCell0 = newRow.insertCell(0);
+    var newCell1 = newRow.insertCell(1);
+    var newCell2 = newRow.insertCell(2);
+    var newCell3 = newRow.insertCell(3);
+    var newCell4 = newRow.insertCell(4);
+    newCell0.appendChild(document.createTextNode(caseId));
+    caseId++;
+    newCell1.appendChild(document.createTextNode(ngay));
+    newCell2.appendChild(document.createTextNode(thang));
+    newCell3.appendChild(document.createTextNode(nam));
+  
     if (laNgayHopLe(ngay, thang, nam)) {
       var [tmrngay, tmrthang, tmrnam] = timNgayHomSau(ngay, thang, nam);
 
       nextdayOutput.textContent = `Ngày hôm sau : ${tmrngay}/ ${tmrthang}/ ${tmrnam} `;
+      newCell4.appendChild(document.createTextNode(tmrngay + '/' + tmrthang + '/' + tmrnam));
     } else {
       nextdayOutput.textContent = `Ngày không hợp lệ `;
+      newCell4.appendChild(document.createTextNode(`Ngày không hợp lệ `));
+    }
+    var cells = [newCell1, newCell2, newCell3, newCell4];
+
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].style.fontWeight = "bold";
+      if (i <= 2) {
+        cells[i].style.color = "#007bff";
+      } else {
+        cells[i].style.color = "#df1a1a";
+      }
     }
   }
 
@@ -229,21 +282,54 @@ function tinhtamgiac(){
     const a = parseInt(aInput.value);
     const b = parseInt(bInput.value);
     const c = parseInt(cInput.value);
+
+    var nextday_table = document.querySelector('.tamgiac-table').getElementsByTagName('tbody')[0];
+    var newRow = nextday_table.insertRow();
+    var newCell0 = newRow.insertCell(0);
+    var newCell1 = newRow.insertCell(1);
+    var newCell2 = newRow.insertCell(2);
+    var newCell3 = newRow.insertCell(3);
+    var newCell4 = newRow.insertCell(4);
+    newCell0.appendChild(document.createTextNode(caseId));
+    caseId++;
+    newCell1.appendChild(document.createTextNode(a));
+    newCell2.appendChild(document.createTextNode(b));
+    newCell3.appendChild(document.createTextNode(c));
+  
     if( kiemtra(a,b,c)) {
         if( a==b && a == c) {
             tamgiacOutput.textContent = `Tam giác đều`;
+            newCell4.appendChild(document.createTextNode(`Tam giác đều`));
         }
         else if((a==b) || (a==c) || (b==c)) {
             tamgiacOutput.textContent = `Tam giác cân`;
-            
+            newCell4.appendChild(document.createTextNode(`Tam giác cân`));
         }
         else if( a*a==b*b+c*c || b*b==a*a+c*c || c*c== a*a+b*b) {
             tamgiacOutput.textContent = `Tam giác vuông`;
+            newCell4.appendChild(document.createTextNode(`Tam giác vuông`));
             
         }
-        else   tamgiacOutput.textContent = `Tam giác thường`;
+        else  {
+          tamgiacOutput.textContent = `Tam giác thường`;
+          newCell4.appendChild(document.createTextNode(`Tam giác thường`));
+        } 
     }
-    else tamgiacOutput.textContent = `Không phải tam giác`;
+    else {
+      tamgiacOutput.textContent = `Không phải tam giác`;
+      newCell4.appendChild(document.createTextNode(`Không phải tam giác`));
+    }
+    var cells = [newCell1, newCell2, newCell3, newCell4];
+
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].style.fontWeight = "bold";
+      if (i <= 2) {
+        cells[i].style.color = "#007bff";
+      } else {
+        cells[i].style.color = "#df1a1a";
+      }
+    }
+
 }
 function Xoatamgiac() {
     aInput.value = '';

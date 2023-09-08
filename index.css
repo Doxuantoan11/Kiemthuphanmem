@@ -33,19 +33,57 @@
 .active {
     color: rgb(209, 24, 40);
 }
-.kq,input[type=input] {
+input[type=input] {
     font-size: 16px;
-    color: rgb(108, 15, 230);
+    color: #007bff;
     font-weight: bold;
   }
+ .kq {
+    color: #df1a1a;
+    font-weight: bold;
+ } 
 
   table,td, th {
     border: 1px solid black;
     border-color: rgb(8, 8, 8) !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    
 }
 table {
     height: fit-content;
     table-layout: fixed;
+    width: 100%;
   }
+thead {
+    position: sticky;
+    top:-1px;
+}
+th:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+th:before {
+    top: 0px;
+    border-top: 2px solid #000;
+}
+
+th:after {
+    bottom: -1px;
+    border-bottom: 2px solid #000;
+}
+  .max-height{
+    max-height: 480px;
+  }
+.mt-kq {
+    margin-left: 400px;
+}
+tbody{
+    font-size: 12px;
+}
 
   
