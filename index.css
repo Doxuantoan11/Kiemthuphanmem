@@ -89,4 +89,18 @@ tbody{
     font-size: 12px;
 }
 
+.caseid-input{
+    color: #0a0101 !important;
+
+}
+
+label,input {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+  }
+.ml-50px{
+    margin-left: 50px;
+}
+
   
