@@ -4,7 +4,9 @@
     border: 0;
     box-sizing: border-box;
    }
-
+body{
+    background-color:  #508bfc;
+}
 .pointer {
     cursor: pointer;
 }
@@ -55,6 +57,7 @@ table {
     height: fit-content;
     table-layout: fixed;
     width: 100%;
+    
   }
 thead {
     position: sticky;

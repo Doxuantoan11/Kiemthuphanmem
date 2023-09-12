@@ -5,6 +5,8 @@ const tamgiac_form = document.querySelector('.tamgiac-form');
 const hoahong_form = document.querySelector('.hoahong-form');
 const nextday_form = document.querySelector('.nextday-form');
 var caseId =1;
+var caseId_nextday =1;
+var caseId_tamgiac =1;
 // form-hoahong
 const khoaInput = document.querySelector('#khoa');
 const bangInput = document.querySelector('#bang');
@@ -234,8 +236,8 @@ function timNgayHomSau(ngay, thang, nam) {
     var newCell2 = newRow.insertCell(2);
     var newCell3 = newRow.insertCell(3);
     var newCell4 = newRow.insertCell(4);
-    newCell0.appendChild(document.createTextNode(caseId));
-    caseId++;
+    newCell0.appendChild(document.createTextNode(caseId_nextday));
+    caseId_nextday++;
     newCell1.appendChild(document.createTextNode(ngay));
     newCell2.appendChild(document.createTextNode(thang));
     newCell3.appendChild(document.createTextNode(nam));
@@ -290,8 +292,8 @@ function tinhtamgiac(){
     var newCell2 = newRow.insertCell(2);
     var newCell3 = newRow.insertCell(3);
     var newCell4 = newRow.insertCell(4);
-    newCell0.appendChild(document.createTextNode(caseId));
-    caseId++;
+    newCell0.appendChild(document.createTextNode(caseId_tamgiac));
+    caseId_tamgiac++;
     newCell1.appendChild(document.createTextNode(a));
     newCell2.appendChild(document.createTextNode(b));
     newCell3.appendChild(document.createTextNode(c));
