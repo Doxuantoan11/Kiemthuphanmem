@@ -76,7 +76,7 @@ nextday.addEventListener('click', () => {
 // tinh xoa bai toan hoa hong
 
 function Kiemtra(khoa, bang, nong) {
-    if (khoa > 0 && khoa <= 70 && bang > 0 && bang <= 80 && nong >0 && khoa <= 90) {
+    if (khoa > 0 && khoa <= 70 && bang > 0 && bang <= 80 && nong >0 && nong <= 90) {
       return true;
     } else {
       return false;
