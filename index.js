@@ -4,9 +4,7 @@ const nextday = document.querySelector('.nextday');
 const tamgiac_form = document.querySelector('.tamgiac-form');
 const hoahong_form = document.querySelector('.hoahong-form');
 const nextday_form = document.querySelector('.nextday-form');
-var caseId =1;
-var caseId_nextday =1;
-var caseId_tamgiac =1;
+const CaseID_hoahong = document.querySelector('#caseid-hoahong');
 // form-hoahong
 const khoaInput = document.querySelector('#khoa');
 const bangInput = document.querySelector('#bang');
@@ -23,6 +21,7 @@ const namInput = document.querySelector('#nam');
 const nextdayOutput = document.querySelector('.nextday-kq');
 const nextday_btn_tinh = document.querySelector('.btn_nextday_tinh');
 const nextday_btn_xoa = document.querySelector('.btn_nextday_xoa');
+const caseId_nextday = document.querySelector('#caseid-nextday');
 
 //tam giac
 const aInput = document.querySelector('#a');
@@ -31,6 +30,7 @@ const cInput = document.querySelector('#c');
 const tamgiacOutput = document.querySelector('.tamgiac-kq');
 const tamgiac_btn_tinh = document.querySelector('.btn_tamgiac_tinh');
 const tamgiac_btn_xoa = document.querySelector('.btn_tamgiac_xoa');
+const caseId_tamgiac = document.querySelector('#caseid-tamgiac');
 
 // bảng
 const hoahong_table = document.querySelector('.hoahong-table');
@@ -98,8 +98,7 @@ function Kiemtra(khoa, bang, nong) {
     var newCell3 = newRow.insertCell(3);
     var newCell4 = newRow.insertCell(4);
     var newCell5= newRow.insertCell(5);
-    newCell0.appendChild(document.createTextNode(caseId));
-    caseId++;
+    newCell0.appendChild(document.createTextNode(CaseID_hoahong.value));
     newCell1.appendChild(document.createTextNode(khoa));
     newCell2.appendChild(document.createTextNode(bang));
     newCell3.appendChild(document.createTextNode(nong));
@@ -236,8 +235,8 @@ function timNgayHomSau(ngay, thang, nam) {
     var newCell2 = newRow.insertCell(2);
     var newCell3 = newRow.insertCell(3);
     var newCell4 = newRow.insertCell(4);
-    newCell0.appendChild(document.createTextNode(caseId_nextday));
-    caseId_nextday++;
+    newCell0.appendChild(document.createTextNode(caseId_nextday.value));
+   
     newCell1.appendChild(document.createTextNode(ngay));
     newCell2.appendChild(document.createTextNode(thang));
     newCell3.appendChild(document.createTextNode(nam));
@@ -292,8 +291,7 @@ function tinhtamgiac(){
     var newCell2 = newRow.insertCell(2);
     var newCell3 = newRow.insertCell(3);
     var newCell4 = newRow.insertCell(4);
-    newCell0.appendChild(document.createTextNode(caseId_tamgiac));
-    caseId_tamgiac++;
+    newCell0.appendChild(document.createTextNode(caseId_tamgiac.value));
     newCell1.appendChild(document.createTextNode(a));
     newCell2.appendChild(document.createTextNode(b));
     newCell3.appendChild(document.createTextNode(c));

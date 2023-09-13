@@ -12,6 +12,7 @@ body{
 }
 .header {
     margin-left: 32px;
+    z-index: 1;
 }
 
 .flexCss{
@@ -99,8 +100,14 @@ label,input {
     width: 100px;
     text-align: left;
   }
+
+  label{
+    font-weight: bold;
+  }
 .ml-50px{
     margin-left: 50px;
 }
 
-  
+.body-form {
+    margin-top: -25px;
+}
